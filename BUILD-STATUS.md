@@ -52,3 +52,17 @@ Open http://127.0.0.1:5173/.
 - **Twitch app.** `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET` are not set. OAuth, Helix `Get Users`, and the EventSub plan are implemented and idle. The socket is not opened, and confirm does not call Helix.
 - **YouTube.** The ≤3 minute Devpost video is not recorded.
 - **Devpost.** Not submitted. Stubs are in `DEVPOST-FIELDS.md`.
+
+## Deploy (public)
+
+Written 2026-10-29 23:42 Asia/Shanghai (HKT). **Do not Devpost-submit.** No card. No invented Codex Session ID.
+
+| What | URL / note |
+| --- | --- |
+| Public GitHub | https://github.com/er-s-an/streamops-pair |
+| Vercel production (alias) | https://streamops-pair.vercel.app/ |
+| Vercel project | `201122catsavetheworld-4924/streamops-pair` |
+| Deploy command | `npx vercel --prod --yes` from app dir |
+| Deploy time | 2026-10-29 23:42 Asia/Shanghai (HKT) |
+
+curl: `GET https://streamops-pair.vercel.app/` → **200**. Single-deployment hostname returns 302 Vercel Authentication (use the alias). GitHub ↔ Vercel auto-link skipped (no Login Connection); push deploys are not wired.
