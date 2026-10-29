@@ -1,0 +1,48 @@
+[
+ {
+  "file": "public/media/master-room-1961.jpg",
+  "media": "image",
+  "ref": "commons:109093813",
+  "title": "Master room 1961",
+  "creator": "Project Kei",
+  "creatorUrl": null,
+  "date": "1961-01-01",
+  "license": "CC BY-SA 4.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:Master_room_1961.jpg",
+  "via": "Wikimedia Commons",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Master_room_1961.jpg",
+  "width": 1600,
+  "height": 1200,
+  "bytes": 1051759,
+  "credit": "\"Master room 1961\" by Project Kei, CC BY-SA 4.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-10-29T10:06:33.113Z"
+ },
+ {
+  "file": "public/media/city-tv-control-room-doors-open-toronto.jpg",
+  "media": "image",
+  "ref": "commons:19747372",
+  "title": "City tv control room Doors Open Toronto 2012 (1)",
+  "creator": "Nayu Kim from Toronto, Canada",
+  "creatorUrl": null,
+  "date": "2012-05-27",
+  "license": "CC BY 2.0",
+  "licenseCode": "by",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:City_tv_control_room_Doors_Open_Toronto_2012_(1).jpg",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/City_tv_control_room_Doors_Open_Toronto_2012_%281%29.jpg/1920px-City_tv_control_room_Doors_Open_Toronto_2012_%281%29.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 526921,
+  "credit": "\"City tv control room Doors Open Toronto 2012 (1)\" by Nayu Kim from Toronto, Canada, CC BY 2.0, via Wikimedia Commons",
+  "notes": [],
+  "saved": "2026-10-29T10:06:33.436Z"
+ }
+]
