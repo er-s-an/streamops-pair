@@ -32,6 +32,7 @@ export function App() {
   const [apiUp, setApiUp] = useState(false);
   const [connectNote, setConnectNote] = useState<string | null>(null);
   const [sessionId, setSessionId] = useState("");
+  const [flash, setFlash] = useState(false);
 
   const result = useMemo(
     () => runPass(SANDBOX_WINDOW, committed),
@@ -124,6 +125,8 @@ export function App() {
       enabled: { ...next.enabled },
     });
     setPassN((n) => n + 1);
+    setFlash(true);
+    window.setTimeout(() => setFlash(false), 700);
   }
 
   async function connectTwitch() {
@@ -165,11 +168,23 @@ export function App() {
           <a href="#questions">Questions</a>
         </nav>
         <div className="top-actions">
+          <span
+            className={twitch?.mode === "connected" ? "mode-chip mode-live" : "mode-chip"}
+            data-testid="mode-chip"
+            title={banner}
+          >
+            {twitch?.mode === "connected" ? `Twitch · ${twitch.login}` : "Sandbox · harborline"}
+          </span>
           <button type="button" className="btn btn-quiet" onClick={connectTwitch}>
             {twitch?.mode === "connected" ? `Token for ${twitch.login}` : "Connect Twitch"}
           </button>
-          <button type="button" className="btn btn-primary" data-testid="recompute" onClick={() => recompute(settings)}>
-            Recompute cues
+          <button
+            type="button"
+            className={dirty ? "btn btn-primary is-dirty" : "btn btn-primary"}
+            data-testid="recompute"
+            onClick={() => recompute(settings)}
+          >
+            {dirty ? "Recompute cues · pending" : "Recompute cues"}
           </button>
         </div>
       </header>
@@ -177,8 +192,9 @@ export function App() {
       <main>
         <section className="intro" id="desk">
           <div className="intro-copy">
-            <h1 data-reveal="">Clear the cue.</h1>
-            <p className="lede" data-reveal="" data-d="1">
+            <p className="eyebrow" data-reveal="">Live ops desk · human confirm</p>
+            <h1 data-reveal="" data-d="1">Clear the cue.</h1>
+            <p className="lede" data-reveal="" data-d="2">
               The pair reads this chat window and writes the mod note, the highlight, and the scene change. You confirm
               before any of it fires.
             </p>
@@ -186,9 +202,9 @@ export function App() {
               {banner}
             </p>
             {connectNote ? <p className="banner">{connectNote}</p> : null}
-            {dirty ? <p className="dirty">Settings differ from the last pass. Recompute to rewrite the cues.</p> : null}
+            {dirty ? <p className="dirty is-pulse" role="status">Settings differ from the last pass. Press Recompute cues to rewrite the desk.</p> : null}
           </div>
-          <SettingsBar settings={settings} onChange={setSettings} onTutorial={recompute} />
+          <SettingsBar settings={settings} dirty={dirty} onChange={setSettings} onTutorial={recompute} />
           <div className="desk">
             <Wire evidence={evidence} />
             <Cues
@@ -204,6 +220,7 @@ export function App() {
               added={added}
               dismissedCount={dismissed.length}
               apiUp={apiUp}
+              flash={flash}
               onFocus={setFocusId}
               onConfirm={(proposal) => {
                 const at = new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });

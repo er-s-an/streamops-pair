@@ -37,3 +37,9 @@ export function roleLabel(role: "broadcaster" | "mod" | "vip" | "sub" | "viewer"
   if (role === "viewer") return null;
   return role;
 }
+
+export function kindBadge(kind: "mod" | "highlight" | "scene"): string {
+  if (kind === "mod") return "Mod";
+  if (kind === "highlight") return "Highlight";
+  return "Scene";
+}

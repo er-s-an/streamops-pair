@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { OBS_SCENES } from "../data/window";
-import { clockFrom, kindLabel } from "../format";
+import { clockFrom, kindBadge, kindLabel } from "../format";
 import type { ClearedCue, CueEdit, Proposal } from "../types";
 
 interface CuesProps {
@@ -16,6 +16,7 @@ interface CuesProps {
   added: Proposal[];
   dismissedCount: number;
   apiUp: boolean;
+  flash: boolean;
   onConfirm: (proposal: Proposal) => void;
   onDismiss: (id: string) => void;
   onSave: (id: string, edit: CueEdit) => void;
@@ -31,7 +32,7 @@ export function Cues(props: CuesProps) {
 
   return (
     <div className="cues" data-ui>
-      <div className="receipt" aria-live="polite" data-testid="receipt">
+      <div className={props.flash ? "receipt is-flash" : "receipt"} aria-live="polite" data-testid="receipt">
         {lines.map((line) => (
           <p key={line}>{line}</p>
         ))}
@@ -179,10 +180,13 @@ function Slip({
       <div className="slip-top">
         <p className="score">{cue.score}</p>
         <div>
+          <div className="slip-meta">
+            <span className={`kind kind-${cue.kind}`}>{kindBadge(cue.kind)}</span>
+            <p className={cue.gate === "armed" ? "stamp stamp-armed" : "stamp"}>
+              {cue.gate === "armed" ? "Armed" : "Held"}
+            </p>
+          </div>
           <h3>{cue.title}</h3>
-          <p className={cue.gate === "armed" ? "stamp stamp-armed" : "stamp"}>
-            {cue.gate === "armed" ? "Armed" : "Held"}
-          </p>
         </div>
       </div>
       <p>{cue.reason}</p>

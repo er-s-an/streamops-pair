@@ -44,9 +44,10 @@ export function Wire({ evidence }: WireProps) {
   return (
     <div className="wire" data-ui ref={scroller}>
       <div className="wire-head">
-        <h2>
-          {SANDBOX_WINDOW.channel}
-        </h2>
+        <div className="wire-title">
+          <h2>{SANDBOX_WINDOW.channel}</h2>
+          <span className="wire-pill">Recorded window</span>
+        </div>
         <p>
           {SANDBOX_WINDOW.title}. {SANDBOX_WINDOW.messages.length} chat lines and {SANDBOX_WINDOW.events.length} mock
           EventSub events, {clockFrom(0)} to {clockFrom(WINDOW_END)}.
@@ -57,7 +58,10 @@ export function Wire({ evidence }: WireProps) {
           row.kind === "event" ? (
             <li key={row.key} id={`wire-${row.key}`} className={evidence.includes(row.key) ? "event-row is-evidence" : "event-row"}>
               <time dateTime={clockFrom(row.t)}>{clockFrom(row.t)}</time>
-              <p>{row.event.summary}</p>
+              <p>
+                <span className="event-tag">EventSub</span>
+                <span>{row.event.summary}</span>
+              </p>
             </li>
           ) : (
             <li

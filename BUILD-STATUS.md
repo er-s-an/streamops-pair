@@ -66,3 +66,20 @@ Written 2026-10-29 23:42 Asia/Shanghai (HKT). **Do not Devpost-submit.** No card
 | Deploy time | 2026-10-29 23:42 Asia/Shanghai (HKT) |
 
 curl: `GET https://streamops-pair.vercel.app/` → **200**. Single-deployment hostname returns 302 Vercel Authentication (use the alias). GitHub ↔ Vercel auto-link skipped (no Login Connection); push deploys are not wired.
+
+
+## Explainer (2026-10-30 08:23 Asia/Shanghai)
+
+- Remotion EN burn-in ~115s rendered: /workspace/competitions/explainers/streamops-pair/out/streamops-pair-explainer.mp4 (3.7MB)
+- Staged under /workspace/video-share/videos/streamops-pair-explainer.mp4 + v/streamops-pair-explainer.html + videos.json
+- Live review deep link (2026-10-30 ~09:19 HKT, 小可 --prod, curl 200): https://review-clips.vercel.app/v/streamops-pair-explainer
+- Do not Devpost submit without 「交」. Session ID / Twitch / YouTube still open.
+
+
+## Polish pass (2026-11-02 ~02:38 Asia/Shanghai / HKT)
+
+- Frontend UX polish for contest desk (mode chip, dirty recompute, kind badges, receipt flash, wire/EventSub clarity). See `POLISH-STATUS.md`.
+- Devpost paste pack strengthened in `DEVPOST-FIELDS.md` — **DO NOT SUBMIT**.
+- YouTube packaging in `YOUTUBE-UPLOAD.md` (source mp4 + review-clips; account still blocks publish).
+- `npm run build` passed after polish.
+- Gaps unchanged: Codex Session ID, Twitch CLIENT_ID/SECRET, YouTube URL, user 「交」.

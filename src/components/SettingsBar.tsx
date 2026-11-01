@@ -15,13 +15,14 @@ const TYPES: { id: Kind; name: string }[] = [
 
 interface SettingsBarProps {
   settings: Settings;
+  dirty: boolean;
   onChange: (settings: Settings) => void;
   onTutorial: (settings: Settings) => void;
 }
 
-export function SettingsBar({ settings, onChange, onTutorial }: SettingsBarProps) {
+export function SettingsBar({ settings, dirty, onChange, onTutorial }: SettingsBarProps) {
   return (
-    <div className="settings">
+    <div className={dirty ? "settings is-dirty" : "settings"}>
       <fieldset data-reveal="" data-d="1">
         <legend>Sensitivity</legend>
         <div className="seg" role="radiogroup" aria-label="Sensitivity">
