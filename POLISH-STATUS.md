@@ -34,7 +34,8 @@ Preserved: honest sandbox banner, Confirm/Edit/Dismiss, true recompute on sensit
 ## Build / deploy
 
 - `npm run build` (tsc + vite): **passed** after polish.
-- Vercel `--prod` / git push: see end of this file / BUILD-STATUS after deploy step.
+- GitHub push: `5bc735f` → `origin/main` (https://github.com/er-s-an/streamops-pair).
+- Vercel `--prod`: **ok** 2026-11-02 ~02:39 Asia/Shanghai (HKT). Alias https://streamops-pair.vercel.app/ (HTTP 200; new title + polish CSS live). Deployment `dpl_Eh92i5fwM6xEjAVShb748ueSHmK3`.
 
 ## Remaining gaps (user)
 

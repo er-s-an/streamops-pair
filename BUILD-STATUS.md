@@ -83,3 +83,9 @@ curl: `GET https://streamops-pair.vercel.app/` → **200**. Single-deployment ho
 - YouTube packaging in `YOUTUBE-UPLOAD.md` (source mp4 + review-clips; account still blocks publish).
 - `npm run build` passed after polish.
 - Gaps unchanged: Codex Session ID, Twitch CLIENT_ID/SECRET, YouTube URL, user 「交」.
+
+### Polish deploy 2026-11-02 ~02:39 Asia/Shanghai (HKT)
+
+- `npx vercel --prod --yes` → READY, aliased https://streamops-pair.vercel.app/
+- GitHub `main` at `5bc735f` (+ follow-up docs if any)
+- curl alias → 200 with polished title meta
